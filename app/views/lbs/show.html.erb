@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @lb.name %>
+</p>
+
+<p>
+  <strong>Url:</strong>
+  <%= @lb.url %>
+</p>
+
+<%= link_to 'Edit', edit_lb_path(@lb) %> |
+<%= link_to 'Back', lbs_path %>

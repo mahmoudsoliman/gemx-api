@@ -1,0 +1,2 @@
+class Gemx < ApplicationRecord
+end

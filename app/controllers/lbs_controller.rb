@@ -25,7 +25,8 @@ class LbsController < ApplicationController
   # POST /lbs.json
   def create
     @lb = Lb.new(lb_params)
-
+    @gm = Gm.first
+    @gm.lbs << @lb
     respond_to do |format|
       if @lb.save
         format.html { redirect_to @lb, notice: 'Lb was successfully created.' }

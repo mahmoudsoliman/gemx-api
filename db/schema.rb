@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 20170924001751) do
   end
 
   create_table "gms_lbs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.bigint "Gm_id", null: false
-    t.bigint "Lb_id", null: false
-    t.index ["Gm_id", "Lb_id"], name: "index_Gms_Lbs_on_gm_id_and_lb_id"
-    t.index ["Lb_id", "Gm_id"], name: "index_Gms_Lbs_on_lb_id_and_gm_id"
+    t.integer "gm_id"
+    t.integer "lb_id"
+    t.index ["gm_id", "lb_id"], name: "index_Gms_Lbs_on_gm_id_and_lb_id"
+    t.index ["lb_id", "gm_id"], name: "index_Gms_Lbs_on_lb_id_and_gm_id"
   end
 
   create_table "lbs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

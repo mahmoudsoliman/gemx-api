@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170922111423) do
+ActiveRecord::Schema.define(version: 20170924001751) do
 
   create_table "gemxes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.datetime "created_at", null: false
@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20170922111423) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "gms_lbs", id: false, force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.bigint "Gm_id", null: false
+    t.bigint "Lb_id", null: false
+    t.index ["Gm_id", "Lb_id"], name: "index_Gms_Lbs_on_gm_id_and_lb_id"
+    t.index ["Lb_id", "Gm_id"], name: "index_Gms_Lbs_on_lb_id_and_gm_id"
   end
 
   create_table "lbs", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|

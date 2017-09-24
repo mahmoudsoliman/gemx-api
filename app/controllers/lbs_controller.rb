@@ -12,6 +12,12 @@ class LbsController < ApplicationController
   def show
   end
 
+  def getlbsforgm
+    @gm = Gm.where(name: params[:gem_name]).first
+    @lbs = @gm.lbs
+    render json: @lbs, status: 200
+  end
+
   # GET /lbs/new
   def new
     @lb = Lb.new

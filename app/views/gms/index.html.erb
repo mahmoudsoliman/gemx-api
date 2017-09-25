@@ -1,0 +1,27 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Gms</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @gms.each do |gm| %>
+      <tr>
+        <td><%= gm.name %></td>
+        <td><%= link_to 'Show', gm %></td>
+        <td><%= link_to 'Edit', edit_gm_path(gm) %></td>
+        <td><%= link_to 'Destroy', gm, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Gm', new_gm_path %>
